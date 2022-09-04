@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Score Board</title>
+</head>
+<body>
+
+	<div th:insert="navbar.html :: navbar"></div>
+
+	<div class="main-container container py-5 px-4">
+		<h3>Top Scores Of All Time</h3>
+
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Score</th>
+			</tr>
+			<tr th:each="score : ${sList}">
+				<td th:text="${score.username}"></td>
+				<td th:text="${score.totalCorrect}"></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>
